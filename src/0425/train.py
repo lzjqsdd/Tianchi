@@ -87,7 +87,8 @@ def LASSO(data,route,twn,time):
     final_x = np.array(final_x)
     #print route,twn,time,final_x.shape
     from sklearn import linear_model
-    clf = linear_model.Lasso(alpha=0.1)
+    #clf = linear_model.Lasso(alpha=0.1)
+    clf = linear_model.RANSACRegressor()
     if final_x.shape[0] == 0:
         print route,twn,time
     else:
